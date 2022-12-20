@@ -16,13 +16,13 @@ export const globalError = (err, req, res, next) => {
     if (err) {
         if (process.env.ENV == "DEV") {
             console.log(err);
-               res.status(err["cause"]).json({
+               res.status(err["cause"] || 500).json({
                  message: err.message,
                  stack: err.stack,
                  status: err["cause"],
                });
         } else {
-               res.status(err["cause"]).json({
+               res.status(err["cause"] || 500).json({
                  message: err.message,
                  status: err["cause"],
                });
