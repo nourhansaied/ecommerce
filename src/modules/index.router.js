@@ -16,6 +16,9 @@ export const initAPI = (app) => {
     app.use(cors({}))
 const baseUrl = process.env.BASEURL;
 
+  app.get("/", (req, res) => {
+    res.send("<h1>hello from BE</h1>")
+  })
   app.use(`${baseUrl}/auth`, authRouter);
   app.use(`${baseUrl}/user`, userRouter);
   app.use(`${baseUrl}/product`, productRouter);
