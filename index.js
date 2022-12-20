@@ -12,7 +12,7 @@ import connectDB from './DB/connection.js'
 import { globalError } from './src/services/asyncHandler.js'
 const app = express()
 // setup port and the baseUrl
-const port = process.env.PORT || 5000
+const port = process.env.PORT
 //convert Buffer Data
 
 app.use(morgan("combined"));
